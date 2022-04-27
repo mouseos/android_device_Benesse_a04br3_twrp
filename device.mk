@@ -5,4 +5,4 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/sts-tottori/TAB_A04_BR3
+LOCAL_PATH := device/sts-tottori/a04br3

@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/sts-tottori/TAB_A04_BR3
+DEVICE_PATH := device/sts-tottori/a04br3
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -26,7 +26,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := TAB_A04_BR3
+TARGET_OTA_ASSERT_DEVICE := a04br3
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := 01.06.000
@@ -54,8 +54,10 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/sts-tottori/TAB_A04_BR3
-TARGET_KERNEL_CONFIG := TAB_A04_BR3_defconfig
+TARGET_KERNEL_SOURCE := kernel/sts-tottori/a04br3
+TARGET_KERNEL_CONFIG := a04br3_defconfig
+BOARD_MTK_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
+
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8167
