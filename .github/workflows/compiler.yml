@@ -3,10 +3,14 @@ name: Make a04br3 Recovery
 on:
   workflow_dispatch:
     inputs:
+      DEVICE_NAME:
+        description: 'DEVICE_NAME'
+        required: true
+        default: 'a04br3'
       LIBRARY_NAME:
         description: 'LIBRARY_NAME'
         required: true
-        default: 'twrp'
+        default: 'omni'
       LIBRARY_URL:
         description: 'LIBRARY_URL'
         required: true
@@ -27,11 +31,19 @@ on:
         description: 'DEVICE_PATH'
         required: true
         default: 'device/sts-tottori/a04br3'
-      DEVICE_NAME:
-        description: 'DEVICE_NAME'
+      KERNEL_URL:
+        description: 'KERNEL_URL'
         required: true
-        default: 'a04br3'
-
+        default: 'https://github.com/Benesse-a04br3-development/android_kernel_Benesse_a04br3.git'
+      KERNEL_BRANCH:
+        description: 'KERNEL_BRANCH'
+        required: true
+        default: 'twrp-7.1'
+      KERNEL_PATH:
+        description: 'KERNEL_PATH'
+        required: true
+        default: 'KERNEL/sts-tottori/a04br3'
+  
 env:
   TZ: Asia/Tokyo
 
@@ -98,8 +110,7 @@ jobs:
         PATH=~/bin:$PATH
         cd ${{ steps.pwd.outputs.pwd }}
         git clone ${{ github.event.inputs.DEVICE_URL }} -b ${{ github.event.inputs.DEVICE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
-        git clone https://github.com/Benesse-a04br3-development/android_kernel_Benesse_a04br3.git -b twrp-7.1 ./kernel/sts-tottori/a04br3
-        
+        git clone ${{ github.event.inputs.KERNEL_URL }} -b ${{ github.event.inputs.KERNEL_BRANCH }} ./${{ github.event.inputs.KERNEL_PATH }}        
     - name: Building
       run: |
         PATH=~/bin:$PATH
