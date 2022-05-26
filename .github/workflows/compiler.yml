@@ -42,7 +42,7 @@ on:
       KERNEL_PATH:
         description: 'KERNEL_PATH'
         required: true
-        default: 'KERNEL/sts-tottori/a04br3'
+        default: 'kernel/sts-tottori/a04br3'
   
 env:
   TZ: Asia/Tokyo
