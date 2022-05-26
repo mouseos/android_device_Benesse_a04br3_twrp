@@ -1,4 +1,4 @@
-name: Make nabu Recovery
+name: Make a04br3 Recovery
 
 on:
   workflow_dispatch:
