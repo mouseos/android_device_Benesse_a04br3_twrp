@@ -120,14 +120,14 @@ jobs:
         source build/envsetup.sh
         lunch ${{ github.event.inputs.LIBRARY_NAME }}_${{ github.event.inputs.DEVICE_NAME }}-eng
         make clean && make clobber
-        mka adbd bootimage -j$(nproc --all)
+        make recoveryimage -j$(nproc --all)
         
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/boot.img
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: Recovery for ${{ github.event.inputs.DEVICE_NAME }}
