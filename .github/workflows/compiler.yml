@@ -111,6 +111,11 @@ jobs:
         cd ${{ steps.pwd.outputs.pwd }}
         git clone ${{ github.event.inputs.DEVICE_URL }} -b ${{ github.event.inputs.DEVICE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
         git clone ${{ github.event.inputs.KERNEL_URL }} -b ${{ github.event.inputs.KERNEL_BRANCH }} ./${{ github.event.inputs.KERNEL_PATH }}        
+    - name: Append mediatek header to kernel
+      run: |
+        cd prebuilt
+        mv Image.gz-dtb Image.gz-dtb.old
+        ../mkimage Image.gz-dtb.old KERNEL > Image.gz-dtb
     - name: Building
       run: |
         PATH=~/bin:$PATH
