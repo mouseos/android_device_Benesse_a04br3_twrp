@@ -115,7 +115,8 @@ jobs:
       run: |
         cd prebuilt
         mv Image.gz-dtb Image.gz-dtb.old
-        ./mkimage Image.gz-dtb.old KERNEL > Image.gz-dtb
+        chmod +x mkimage
+        sudo ./mkimage Image.gz-dtb.old KERNEL > Image.gz-dtb
     - name: Building
       run: |
         PATH=~/bin:$PATH
