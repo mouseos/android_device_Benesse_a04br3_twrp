@@ -80,7 +80,7 @@ jobs:
         export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
         export PATH=$JAVA_HOME/bin:$PATH
         
-- name: Set variables
+    - name: Set variables
       run: |
         echo "::set-output name=date::$(date +%F)"
       id: var
