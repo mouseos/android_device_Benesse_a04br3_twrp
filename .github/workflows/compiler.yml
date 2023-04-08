@@ -67,7 +67,7 @@ jobs:
 
     - name: Prepare the environment
       run: |
-        release=bionic; cat > "/etc/apt/sources.list.d/$release.list"<<EOF
+        release=bionic; sudo cat > "/etc/apt/sources.list.d/$release.list"<<EOF
         deb http://archive.ubuntu.com/ubuntu $release universe
         deb http://archive.ubuntu.com/ubuntu $release multiverse
         deb http://security.ubuntu.com/ubuntu $release-security main
