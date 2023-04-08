@@ -67,11 +67,11 @@ jobs:
 
     - name: Prepare the environment
       run: |
-        release=bionic; sudo cat > "/etc/apt/sources.list.d/$release.list"<<EOF
+        sudo sh -c 'release=bionic; cat > "/etc/apt/sources.list.d/$release.list"<<EOF
         deb http://archive.ubuntu.com/ubuntu $release universe
         deb http://archive.ubuntu.com/ubuntu $release multiverse
         deb http://security.ubuntu.com/ubuntu $release-security main
-        EOF
+        EOF'
         docker rmi `docker images -q`
         sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/sudo apt/sources.list.d
         sudo apt -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
