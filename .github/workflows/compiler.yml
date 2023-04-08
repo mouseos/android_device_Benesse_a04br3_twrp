@@ -118,8 +118,7 @@ jobs:
         mv Image.gz-dtb Image.gz-dtb.old
         chmod +x mkimage
         sudo ./mkimage Image.gz-dtb.old KERNEL > Image.gz-dtb
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+
     - name: Building
       run: |
         PATH=~/bin:$PATH
