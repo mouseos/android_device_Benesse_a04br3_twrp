@@ -32,8 +32,8 @@ TARGET_OTA_ASSERT_DEVICE := a04br3
 TARGET_BOOTLOADER_BOARD_NAME := 01.06.000
 
 # File systems
-BOARD_HAS_LARGE_FILESYSTEM := true
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x500000 # This is the maximum known partition size, but it can be higher, so we just omit it
+BOARD_HAS_LARGE_FILESYSTEM := false
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x1000000 # This is the maximum known partition size, but it can be higher, so we just omit it. Not working 
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
