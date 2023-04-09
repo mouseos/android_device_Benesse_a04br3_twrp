@@ -105,7 +105,13 @@ jobs:
         PATH=~/bin:$PATH
         cd workspace
         repo sync -j$(nproc --all)
-            
+                  
+    - name: Clone device
+      run: |
+        PATH=~/bin:$PATH
+        cd ${{ steps.pwd.outputs.pwd }}
+        git clone ${{ github.event.inputs.DEVICE_URL }} -b ${{ github.event.inputs.DEVICE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+        git clone ${{ github.event.inputs.KERNEL_URL }} -b ${{ github.event.inputs.KERNEL_BRANCH }} ./${{ github.event.inputs.KERNEL_PATH }}        
     - name: Append mediatek header to kernel
       run: |
         cd prebuilt
