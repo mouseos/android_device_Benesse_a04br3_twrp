@@ -38,7 +38,7 @@ on:
       KERNEL_BRANCH:
         description: 'KERNEL_BRANCH'
         required: true
-        default: 'twrp-7.1'
+        default: 'master'
       KERNEL_PATH:
         description: 'KERNEL_PATH'
         required: true
