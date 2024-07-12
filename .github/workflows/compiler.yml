@@ -22,7 +22,7 @@ on:
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/Benesse-a04br3-development/android_device_Benesse_a04br3_twrp.git'
+        default: 'https://github.com/mouseos/android_device_Benesse_a04br3_twrp.git'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
@@ -34,7 +34,7 @@ on:
       KERNEL_URL:
         description: 'KERNEL_URL'
         required: true
-        default: 'https://github.com/Benesse-a04br3-development/android_kernel_Benesse_a04br3.git'
+        default: 'https://github.com/mouseos/android_kernel_Benesse_a04br3'
       KERNEL_BRANCH:
         description: 'KERNEL_BRANCH'
         required: true
